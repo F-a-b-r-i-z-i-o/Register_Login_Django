@@ -14,5 +14,8 @@ css is also used in the implementation to make the user experience more user-fri
 
 This project can represent the base from which to start to implement a more complex web service to work on.
 
+Python 3.8.5 
+Django 3.2.6
+
 Enjoy yourselves.
 2F.
