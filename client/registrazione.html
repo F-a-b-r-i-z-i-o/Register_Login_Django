@@ -1,0 +1,69 @@
+<html>
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="registrazione.css">
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+	<div class="row centered-form">
+	<div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+					<h3 class="panel-title">Please sign up for Bootsnipp <small>It's free!</small></h3>
+					 </div>
+					 <div class="panel-body">
+					<form id="form">
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+						<input type="text" name="username" class="form-control input-sm" placeholder="username">
+								</div>
+							</div>
+
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="email" name="email" class="form-control input-sm" placeholder="email@example.com">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-xs-6 col-sm-6 col-md-6">
+								<div class="form-group">
+									<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+								</div>
+							</div>
+						</div>
+						
+						<input type="submit" value="Register" class="btn btn-info btn-block">
+
+						<div class="risposta">
+
+						</div>
+					
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+  $('#form').submit(function(e){
+    e.preventDefault();
+    $.ajax({
+    type: 'POST',
+    url: 'http://127.0.0.1:8000/register/',
+    crossDomain: true,
+    dataType: 'json',
+    data: $(this).serialize(),
+    success: function(data){
+    $(".risposta").html("Prenotazione effettuata con successo!!!");
+        },
+        error:function(data){
+        console.log(data);
+        }
+    })
+});
+</script>
+</html>
